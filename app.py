@@ -58,12 +58,13 @@ def obj_detection(my_img):
 
     plt.imshow(img)
     column2.pyplot(use_column_width=True)
-    if link == []:
-        st.success("Unable to decode QR code")
-    for i in link:
-        st.success(i)
+    if st.checkbox("Show the result scan QR code", value=True):
+        if link == []:
+            st.success("Unable to decode QR code")
+        for i in link:
+            st.success(i)
     st.markdown(
-        "SCAN QRCODE BY NGUYEN XUAN VINH"
+            "SCAN QRCODE BY NGUYEN XUAN VINH"
     )
 
 
@@ -135,8 +136,8 @@ def decode(newImage):
             for barcode in barcodes:
                 cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
                 barcodeData = barcode.data.decode("utf-8")
-                barcodeType = barcode.type
-                text1 = "{} ({})".format(barcodeData, barcodeType)
+               # barcodeType = barcode.type
+                text1 = "{}".format(barcodeData) # ({}), barcodeType
                 # cv2.putText(img, text1, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                 if text1 != "":
                     def KT():
@@ -217,8 +218,8 @@ def decode_camera(newImage):
             for barcode in barcodes:
                 cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
                 barcodeData = barcode.data.decode("utf-8")
-                barcodeType = barcode.type
-                text1 = "{} ({})".format(barcodeData, barcodeType)
+                #barcodeType = barcode.type
+                text1 = "{}".format(barcodeData) # ({}), barcodeType
                 cv2.putText(img, text1, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
                 if text1 != "":
                     def KT():
