@@ -7,7 +7,6 @@ matplotlib==3.4.2
 matplotlib-inline==0.1.2
 aiortc==1.2.0
 av==8.0.3
-opencv_python==4.5.2.54
 pydub==0.25.1
 streamlit_webrtc==0.22.1
 typing_extensions==3.10.0.0
