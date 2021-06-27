@@ -68,7 +68,7 @@ def obj_detection(my_img):
 
 
 def decode(newImage):
-    net = cv2.dnn.readNet("yolov4-.weights",
+    net = cv2.dnn.readNet("yolov4.weights",
                           "yolov4.cfg")
 
     labels = []
