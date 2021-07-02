@@ -116,8 +116,8 @@ def decode(newImage):
                 confidences.append(float(confidence))
                 classID.append(class_id)
 
-    score_threshold = st.sidebar.slider("Confidence_threshold", 0.00, 1.00, 0.5, 0.01)
-    nms_threshold = st.sidebar.slider("NMS_threshold", 0.00, 1.00, 0.4, 0.01)
+    score_threshold = 0.5
+    nms_threshold = 0.4
 
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, score_threshold, nms_threshold)
     print(indexes)
@@ -198,8 +198,8 @@ def decode_camera(newImage):
                 confidences.append(float(confidence))
                 classID.append(class_id)
 
-    score_threshold = st.sidebar.slider("Confidence_threshold", 0.00, 1.00, 0.5, 0.01)
-    nms_threshold = st.sidebar.slider("NMS_threshold", 0.00, 1.00, 0.4, 0.01)
+    score_threshold = 0.5
+    nms_threshold = 0.4
 
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, score_threshold, nms_threshold)
     print(indexes)
@@ -265,9 +265,7 @@ def app_object_detection():
         async_processing=True,
     )
 
-    confidence_threshold = st.slider(
-        "Confidence threshold", 0.0, 1.0, 0.5, 0.05
-    )
+    confidence_threshold = 0.5
     if webrtc_ctx.video_processor:
         webrtc_ctx.video_processor.confidence_threshold = confidence_threshold
     if st.checkbox("Show the result scan QR code", value=True):
