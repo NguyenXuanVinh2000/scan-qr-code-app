@@ -1,6 +1,6 @@
 # scan-qr-code-app
 Streamlit scan QR app web
 # Deloy local
-# git clone project 
-# pip install -r requirements.txt 
-# streamlit run app.y
+1. git clone project 
+2. pip install -r requirements.txt 
+3. streamlit run app.y
